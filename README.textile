@@ -1,0 +1,43 @@
+h1. PipeBomb
+
+This plugin allows you to run simple switch/case expressions within a small tag footprint.
+
+"Forum thread":http://expressionengine.com/forums/viewthread/147377/
+
+h2. Samples
+
+h3. Common usage
+
+@{exp:pipebomb switch="{dynamic_variable}" cases="1|2|3|4" values="Number One|Number Two|Number Three|Number Four"}@
+
+In the example above, if the dynamic variable is 3, then "Number Three" shall be returned.
+
+h3. Switch on ExpressionEngine cookies
+
+@{exp:pipebomb switch="language" switch_type="cookie" cases="|_es|_pg" values="Display English|Indicar Español|Mostrar Português"}@
+
+If you need to get a cookie variable set by ExpressionEngine, set the switch_type to "cookie" and enter the cookie name in the switch parameter.
+
+h2. Parameters
+
+* switch: the variable expression that will be used to search for a match in "cases"
+* switch_type="cookie": [OPTIONAL] to get the value of an ExpressionEngine cookie (the value of "switch" should be the cookie name)
+* cases: the piped fields for the "switch" to match
+* values: the piped output that corresponds to the "cases" fields
+
+
+
+h2. Changelog
+
+1.0 (2010-02-26)
+* renamed parameters
+
+0.3 (2010-02-25)
+* added cookie_switch parameter
+
+0.2 (2010-02-24)
+* changed name from pi.language_pipe.php to pi.pipebomp.php
+* moved hard-coded attributes into plugin paramters
+
+0.1  2010-02-09
+* initial
